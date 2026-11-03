@@ -1,0 +1,22 @@
+---
+import { steps } from '../data/site';
+---
+
+<section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <h2 class="text-center font-display text-3xl font-bold sm:text-4xl">Как проходит первый визит</h2>
+  <p class="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">
+    Около 40 минут. Ничего не лечим без вашего согласия.
+  </p>
+
+  <ol class="mt-12 grid gap-6 md:grid-cols-3">
+    {steps.map((s, i) => (
+      <li class="rounded-2xl border border-line bg-surface p-6 sm:p-8">
+        <span class="flex h-11 w-11 items-center justify-center rounded-full bg-primary font-display text-lg font-bold text-white">
+          {i + 1}
+        </span>
+        <h3 class="mt-5 text-lg font-semibold">{s.title}</h3>
+        <p class="mt-2 leading-relaxed text-muted">{s.text}</p>
+      </li>
+    ))}
+  </ol>
+</section>

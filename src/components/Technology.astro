@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import xrayImg from '../assets/xray.jpg';
+import clinicImg from '../assets/clinic.jpg';
+
+const points = [
+  'Компьютерный томограф и внутриротовой сканер - без слепков и гадания',
+  'Лечение каналов под микроскопом с 25-кратным увеличением',
+  'Импланты Straumann и Osstem с пожизненной гарантией производителя',
+  'Стерилизация по стандартам хирургических отделений больниц',
+];
+---
+
+<section id="technology" class="bg-surface">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 md:grid-cols-2">
+    <div class="grid grid-cols-5 gap-4">
+      <Image
+        src={xrayImg}
+        alt="Врач изучает 3D-снимки зубов на световом экране"
+        widths={[400, 700]}
+        sizes="(min-width: 768px) 30vw, 60vw"
+        class="col-span-3 aspect-[3/4] w-full rounded-3xl object-cover"
+      />
+      <Image
+        src={clinicImg}
+        alt="Светлый кабинет клиники со стоматологическим креслом"
+        widths={[300, 500]}
+        sizes="(min-width: 768px) 20vw, 40vw"
+        class="col-span-2 mt-12 aspect-[2/3] w-full rounded-3xl object-cover object-[60%_center]"
+      />
+    </div>
+
+    <div>
+      <h2 class="font-display text-3xl font-bold sm:text-4xl">Оборудование, которому можно доверять</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted">
+        Мы вложились в технику, чтобы лечение было точным, быстрым и без повторных визитов «на исправление».
+      </p>
+      <ul class="mt-8 space-y-4">
+        {points.map((p) => (
+          <li class="flex gap-3">
+            <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-mint text-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 12l5 5 9-10" /></svg>
+            </span>
+            <span class="leading-relaxed">{p}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
