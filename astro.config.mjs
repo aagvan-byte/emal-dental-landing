@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://emal-dental-landing.vercel.app',
+  site: 'https://emal-dental-landing-xi.vercel.app',
 
   vite: {
     plugins: [tailwindcss()]
